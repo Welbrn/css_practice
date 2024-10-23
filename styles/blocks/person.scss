@@ -1,0 +1,78 @@
+.person {
+  &__photo {
+    @include flex(center, right);
+
+    position: relative;
+  }
+
+  &__photo--img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 10px 10px 8px 10px;
+    transition: all $transition-duration;
+  }
+
+  &__rank {
+    @include flex(center, center);
+
+    position: absolute;
+    background-color: $background-color;
+    color: $runk-text-color;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin: 20px;
+    font-size: 16px;
+    line-height: 18.4px;
+  }
+
+  &__details {
+    padding: 0;
+  }
+
+  &__name {
+    @include flex(center, center);
+
+    font-size: 20px;
+    line-height: 23px;
+    color: $text-main-color;
+    margin: 0 0 9px;
+    transition: all $transition-duration
+  }
+
+  &__extra {
+    @include flex(center, center);
+    
+    font-size: 18px;
+    line-height: 20.7px;
+    color: $text-second-color;
+    margin: 0 0 16px;
+    transform: scale(0);
+  }
+}
+
+.person:hover {
+  background-color: $background-color-hover;
+  border-radius: 10px;
+  transform: scale(1);
+
+  &:hover .person__extra {
+    transform: scale(1);
+  }
+
+  &:hover .person__name {
+    transform: scale(1.2);
+  }
+
+  &:hover {
+    transition: all $transition-duration;
+    transform: scale(1.2);
+
+    &:hover .person__photo--img {
+      border-radius: 25%;
+      transition: all $transition-duration;
+    }
+  }
+  
+}
